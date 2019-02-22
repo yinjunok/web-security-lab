@@ -185,8 +185,9 @@ Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: www.example.com
 ```
 
-### CORS settings attributes
+### [CORS settings attributes](https://developer.mozilla.org/zh-CN/docs/Web/HTML/CORS_settings_attributes )
 在HTML5中，一些 HTML 元素提供了对 CORS 的支持, 例如 `img`, `video`, `script`.均有一个跨域属性 (crossOrigin property)，它允许你配置元素获取数据的 CORS 请求。 这些属性是枚举的，并具有以下可能的值：
+
 | 关键字 | 描述 |
 |--------|-----|
 |anonymous | 对此元素的CORS请求将不设置凭据标志。|
