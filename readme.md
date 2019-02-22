@@ -119,9 +119,9 @@ Origin
 yarn run cors # 启动服务
 ```
 
-#### 简单请求
+#### [简单请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82)
 
-响应中没有 CORS: 
+响应中没有 CORS:   
 ![AJAX 需要遵守同源策略](./cors/img/cors-1.PNG)  
 想让请求能正常收发, 我们需要在响应中添加 `Access-Control-Allow-Origin` 响应头, 告诉浏览器, 允许这个域访问该资源.
 
@@ -132,7 +132,7 @@ ctx.set('Access-Control-Allow-Origin', 'http://127.0.0.1:4000');
 ![允许获取请求](./cors/img/cors-2.PNG)  
 请求可以正常收发了.
 
-### 预检请求
+### [预检请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#%E9%A2%84%E6%A3%80%E8%AF%B7%E6%B1%82)
 
 对于上面的[简单请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82)只需要设置 `Access-Control-Allow-Origin` 就够了. 下面我们来试试一下发送 DELETE 请求
 
