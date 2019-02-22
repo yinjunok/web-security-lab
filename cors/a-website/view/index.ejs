@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    点击会向 <code>http://127.0.0.1:4001</code> 发送一个 get 请求 <br />
+    <button id="get-btn">确定</button>
+    <div id="get-response"></div>
+
+    <script>
+      const getResponse = document.getElementById("get-response");
+      const getBtn = document.getElementById("get-btn");
+
+      getBtn.onclick = async function() {
+        try {
+          const res = await fetch("http://127.0.0.1:4001/cors", {
+            method: "GET"
+          });
+          getResponse.innerHTML = await res.text();
+        } catch (err) {
+          getResponse.innerHTML = err.message;
+        }
+      };
+    </script>
+
+    <hr />
+
+    点击会向 <code>http://127.0.0.1:4001</code> 发送一个 DELETE 请求 <br />
+    <button id="delete-btn">确定</button>
+    <div id="delete-response"></div>
+
+    <script>
+      const deleteResponse = document.getElementById("delete-response");
+      const deleteBtn = document.getElementById("delete-btn");
+
+      deleteBtn.onclick = async function() {
+        try {
+          const res = await fetch("http://127.0.0.1:4001/cors-delete", {
+            method: "DELETE"
+          });
+          deleteResponse.innerHTML = await res.text();
+        } catch (err) {
+          deleteResponse.innerHTML = err.message;
+        }
+      };
+    </script>
+
+    <hr />
+
+    点击会向 <code>http://127.0.0.1:4001</code> 发送一个 DELETE 请求 <br />
+    <button id="cookie">cookie</button>
+    <script>
+      const cookie = document.getElementById('cookie');
+      
+      cookie.onclick = async function() {
+        const res = await fetch('/cookie', {
+          method: 'GET',
+          credentials: 'omit'
+        });
+
+        console.log(await res.text());
+      }
+    </script>
+  </body>
+</html>

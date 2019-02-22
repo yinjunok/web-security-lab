@@ -8,7 +8,10 @@
     "be-attacked": "node-dev ./csrf/csrf-be-attacked/index.js",
     "attack": "node-dev ./csrf/csrf-attack/index.js",
     "csrf": "run-p be-attacked attack",
-    "xss": "node-dev ./xss/index.js"
+    "xss": "node-dev ./xss/index.js",
+    "cors-a": "node-dev ./cors/a-website/index.js",
+    "cors-b": "node-dev ./cors/b-website/index.js",
+    "cors": "run-p cors-a cors-b"
   },
   "dependencies": {
     "koa": "^2.7.0",
