@@ -122,14 +122,14 @@ yarn run cors # 启动服务
 #### 简单请求
 
 响应中没有 CORS: 
-![AJAX 需要遵守同源策略](./cors/img/cors-1.PNG)
+![AJAX 需要遵守同源策略](./cors/img/cors-1.PNG)  
 想让请求能正常收发, 我们需要在响应中添加 `Access-Control-Allow-Origin` 响应头, 告诉浏览器, 允许这个域访问该资源.
 
 ```javascript
 ctx.set('Access-Control-Allow-Origin', 'http://127.0.0.1:4000');
 ```
 
-![允许获取请求](./cors/img/cors-2.PNG)
+![允许获取请求](./cors/img/cors-2.PNG)  
 请求可以正常收发了.
 
 ### 预检请求
@@ -144,10 +144,10 @@ router.delete('/cors-delete', async (ctx) => {
 });
 ```
 
-![DELETE 请求](./cors/img/cors-3.PNG)
+![DELETE 请求](./cors/img/cors-3.PNG)  
 请求失败了, 告诉我们没有设置允许跨域源的响应头, 我们明明已经设置了. 打开 NetWork 面板
 
-![OPTIONS 预检](./cors/img/cors-4.PNG)
+![OPTIONS 预检](./cors/img/cors-4.PNG)  
 看到我们的 `DELETE` 请求变成了一个 `OPTIONS` 请求.
 这是因为[非简单请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#%E9%A2%84%E6%A3%80%E8%AF%B7%E6%B1%82), 浏览器会先发出一个 `OPTIONS` 请求, 询问服务器, 这个请求是否允许跨域, 接受什么请求方法. 如果实际的请求满足 `OPTIONS` 的响应, 才会把实际请求发出.
 
