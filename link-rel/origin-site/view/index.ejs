@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <a target="_blank" href="http://127.0.0.1:4001/">
+    没有设置<code>rel="noopener noreferrer"</code>, 点击链接跳转, 原始页面会自动跳转到 https://www.baidu.com, 并且带有 <code>Referer</code> 请求头
+  </a> <br><br>
+  <a rel="noopener noreferrer" target="_blank" href="http://127.0.0.1:4001/">
+    设置<code>rel="noopener noreferrer"</code>后, 点击链接跳转, 原始页面<strong>不会</strong>自动跳转到 https://www.baidu.com, 也不会带有<code>Referer</code> 请求头
+  </a>
+</body>
+</html>

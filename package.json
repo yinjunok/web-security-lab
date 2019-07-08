@@ -11,7 +11,10 @@
     "xss": "node-dev ./xss/index.js",
     "cors-a": "node-dev ./cors/a-website/index.js",
     "cors-b": "node-dev ./cors/b-website/index.js",
-    "cors": "run-p cors-a cors-b"
+    "cors": "run-p cors-a cors-b",
+    "link-rel-origin": "node-dev ./link-rel/origin-site/index.js",
+    "link-rel-jump": "node-dev ./link-rel/jump-site/index.js",
+    "link-rel": "run-p link-rel-origin link-rel-jump"
   },
   "dependencies": {
     "koa": "^2.7.0",

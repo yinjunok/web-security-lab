@@ -205,3 +205,27 @@ https://developer.mozilla.org/zh-CN/docs/Glossary/CORS
 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS  
 https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy  
 https://developer.mozilla.org/zh-CN/docs/Web/HTML/CORS_settings_attributes  
+
+## 链接设置 `rel="noopener noreferrer"`
+
+`a` 标签中的 `rel` 属性表明打开页面跟原始页面直接的关系.
+当使用 `target="_blank"` 打开一个新页面的时候, 新页面与原始页面用的是同一个进程. 如果新页面在运行的是大量运算的 JS 程序,
+会影响到原始页面的性能.
+
+还有一个更严重的潜在问题是, 新页面可以通过 `window.opener` 访问到原始页面的 `window` 对象, 如果打开的是恶意的第三方网页,
+可以通过 `window.opener.location = newURL` 让原始页面打开一个新的页面.
+
+![自动跳转](./link-rel/img/snapshot.gif)
+
+可以通过设置 `rel="noopener"` 来避免这种情况.
+
+点击链接的时候打开新页面的时候, HTTP 请求头里会带有 `Referer` 这个标头, 表示从哪里跳转到这个页面. 如果不想被跟踪, 那么需要设置
+`rel="noreferrer"`
+
+完整演示运行 `npm run link-rel`
+
+参考资料:   
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a  
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types  
+https://developers.google.com/web/tools/lighthouse/audits/noopener  
+https://mathiasbynens.github.io/rel-noopener/  
